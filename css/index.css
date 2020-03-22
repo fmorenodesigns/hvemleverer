@@ -96,22 +96,21 @@ a {
   max-height: 0px;
   overflow: hidden;
   padding: 0px;
-  -moz-transition: max-height 0.5s ease, padding 0.2s ease;
-  -ms-transition: max-height 0.5s ease, padding 0.2s ease;
-  -o-transition: max-height 0.5s ease, padding 0.2s ease;
-  -webkit-transition: max-height 0.5s ease, padding 0.2s ease;
-  transition: max-height 0.5s ease, padding 0.2s ease;
+  -moz-transition: max-height 0.1s ease, padding 0.1s ease;
+  -ms-transition: max-height 0.1s ease, padding 0.1s ease;
+  -o-transition: max-height 0.1s ease, padding 0.1s ease;
+  -webkit-transition: max-height 0.1s ease, padding 0.1s ease;
+  transition: max-height 0.1s ease, padding 0.1s ease;
 }
 
 .category-expanded {
   padding: 30px;
-  height: auto;
-  max-height: 2000px;
-  -moz-transition: max-height 0.5s ease, padding 0.2s ease;
-  -ms-transition: max-height 0.5s ease, padding 0.2s ease;
-  -o-transition: max-height 0.5s ease, padding 0.2s ease;
-  -webkit-transition: max-height 0.5s ease, padding 0.2s ease;
-  transition: max-height 0.5s ease, padding 0.2s ease;
+  max-height: 3000px;
+  -moz-transition: max-height 2.5s ease, padding 0.2s ease;
+  -ms-transition: max-height 2.5s ease, padding 0.2s ease;
+  -o-transition: max-height 2.5s ease, padding 0.2s ease;
+  -webkit-transition: max-height 2.5s ease, padding 0.2s ease;
+  transition: max-height 2.5s ease, padding 0.2s ease;
 }
 
 .companies {
