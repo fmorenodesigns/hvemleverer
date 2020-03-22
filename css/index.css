@@ -323,7 +323,7 @@ a {
   .category-name:hover {
     filter: none;
   }
-  .header{
+  .header, .disclaimer{
     text-align: justify;
     text-justify: inter-character;
   }
