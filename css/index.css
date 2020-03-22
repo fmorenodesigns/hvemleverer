@@ -174,4 +174,11 @@ i {
     margin-left: 0;
     margin-right: 0;
   }
+  #content {
+    padding: 30px 40px;
+    width: calc(100% - 40px *2);
+  }
+  .filter {
+    font-size: 0.9rem;
+  }
 }
