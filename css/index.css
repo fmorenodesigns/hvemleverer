@@ -72,6 +72,10 @@ a {
   margin-right: 10px;
 }
 
+.category-name:hover .category-logo {
+  color: #2398c5;
+}
+
 .category-name {
   text-align: left;
   font-weight: 500;
@@ -88,6 +92,10 @@ a {
   position: sticky;
   top: 15px;
   z-index: 2;
+}
+
+.category-name:hover {
+  border-color: #2398c5;
 }
 
 .category-name-expanded::before {
@@ -174,7 +182,7 @@ a {
 }
 
 .company:hover .company-name {
-  color: #2e79d6;
+  color: #2398c5;
 }
 
 .company-specs {
