@@ -10,13 +10,17 @@ body, html {
 }
 
 p {
-  margin: 5px 0px;
+  margin: 3px 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #3e3e3e;
 }
 
 #content {
   margin: auto;
-  width: calc(100% - 60px *2)
-  max-width: calc(1200px - 60px *2);
+  width: calc(100% - 60px *2);
   text-align: center;
   padding: 60px;
 }
@@ -45,27 +49,30 @@ p {
 }
 
 .category-name {
-  text-align: left;
+  text-align: center;
   font-weight: 600;
-  font-size: 1.3rem;
-  margin: 30px 0px 20px 0px;
-  display: flex;
+  font-size: 1.2rem;
+  margin: 40px 0px 0px 0px;
+  color: #3dabe0;
+  padding: 20px 30px;
 }
 
 .company {
-  width: calc(30% - 30px * 2);
+  width: calc(25% - 30px * 2  - 15px * 2  - 2px);
   display: inline-flex;
   vertical-align: middle;
   background-color: #FFF;
   border: 1px solid #d8d8d8;
-  -webkit-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.25);
+  border-bottom: 5px solid #d8d8d8;
   flex-direction: column;
   padding: 20px 30px;
-  border-radius: 5px;
   margin: 15px 15px;
   text-align: left;
+  cursor:pointer;
+}
+
+.company:hover {
+  border-bottom: 5px solid #3dabe0;
 }
 
 .company-logo {
@@ -92,5 +99,31 @@ p {
 
 .spec-title {
   font-size: 0.8rem;
-  color: #3e3e3e70;
+  color: #3e3e3e80;
+}
+
+.price-from{
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+@media all and (max-width: 1765px){
+  .company {
+    width: calc(33% - 30px * 2 - 15px * 2 - 2px);
+  }
+}
+
+
+@media all and (max-width: 1100px){
+  .company {
+    width: calc(50% - 30px * 2 - 15px * 2 - 2px);
+  }
+}
+
+@media all and (max-width: 800px)  {
+  .company {
+    width: calc(100% - 30px * 2);
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
