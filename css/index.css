@@ -22,6 +22,10 @@ i {
   color: #7fafd4;
 }
 
+.arrow-icon {
+  margin-right: 0;
+}
+
 .hidden {
   display: none;
   visibility: hidden;
@@ -234,16 +238,42 @@ i {
 
 @media all and (max-width: 800px)  {
   .company {
-    width: calc(100% - 30px * 2);
+    width: calc(100% - 20px * 2);
     margin-left: 0;
     margin-right: 0;
+    margin-top: 5px;
+    padding: 20px 20px;
   }
   #content {
-    padding: 30px 40px;
-    width: calc(100% - 40px *2);
+    padding: 30px 20px;
+    width: calc(100% - 20px * 2);
+  }
+  .category-name:hover {
+    filter: none;
+  }
+  .category-name {
+    position: sticky;
+    top: 15px;
+    z-index: 2;
+  }
+  .category-name-expanded::before {
+    position: absolute;
+    top: -15px;
+    left: -3px;
+    z-index: 2;
+    content: " ";
+    background-color: #f6f8fb;
+    width: calc(100% + 3px);
+    height: 15px;
+  }
+  .category-expanded {
+    padding: 25px;
   }
   .filter {
     font-size: 0.9rem;
+  }
+  .header {
+    padding: 0px 15px;
   }
 }
 

@@ -77,6 +77,7 @@ $(document).on('click', '.filter', function(){
 $(document).on('click', '.category-name', function(){
   let category = $(this);
 
+  category.toggleClass('category-name-expanded')
   category.children('.arrow-icon').toggleClass('fa-chevron-down');
   category.children('.arrow-icon').toggleClass('fa-chevron-up');
   let category_id = category.attr('id').split("_")[2];
