@@ -17,11 +17,6 @@ a {
   color: #607d8b;
 }
 
-i {
-  margin-right: 15px;
-  color: #7fafd4;
-}
-
 .arrow-icon {
   margin-right: 0;
 }
@@ -65,6 +60,14 @@ i {
   background-color: #FFF;
   border-radius: 0 0 0.25rem 0.25rem;
   padding: 30px;
+}
+
+.category-logo {
+  width: 30px;
+  text-align: center;
+  color: #7fafd4;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .category-name {

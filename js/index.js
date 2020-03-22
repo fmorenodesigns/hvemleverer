@@ -4,7 +4,7 @@ var companies =
 var categories = [];
 
 function addCategory(category, category_logo, category_id) {
-  $('.company-list').append('<p class="category-name" id="category_name_'+category_id+'">'+category_logo+category+'<i class="arrow-icon fas fa-chevron-down"></i></p>');
+  $('.company-list').append('<p class="category-name" id="category_name_'+category_id+'"><span class="category-logo">'+category_logo+'</span>'+category+'<i class="arrow-icon fas fa-chevron-down"></i></p>');
   $('.company-list').append('<div class="category" id="category_'+category_id+'"></div>');
   $('#category_'+category_id).append('<div class="companies"> </div>');
 }
