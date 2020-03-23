@@ -29,19 +29,21 @@ function addFilters(){
   }
 }
 
-
+var can_send_form = true;
 $(document).ready(function(){
   document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+    event.preventDefault();
+    if(can_send_form){
+      can_send_form = false;
 
       let form = this;
 
       var template_params = {
-        "name": this.company_name.value,
-        "webpage": this.company_webpage.value
+        "name": form.company_name.value,
+        "webpage": form.company_webpage.value
       }
       // generate the contact number value
-      this.contact_number.value = Math.random() * 100000 | 0;
+      form.contact_number.value = Math.random() * 100000 | 0;
       emailjs.send('gmail', 'template_p1yp4L7J', template_params)
       .then(function(response) {
          if(response.status === 200) {
@@ -54,6 +56,7 @@ $(document).ready(function(){
              $('#contact-form-status').toggleClass('hidden');
              $('#contact-form-status').toggleClass('slide-from-top');
              $('#contact-form-status-black-panel').toggleClass('hidden');
+             can_send_form = true;
            }, 4800)
          }
       }, function(error) {
@@ -65,9 +68,11 @@ $(document).ready(function(){
             $('#contact-form-status').toggleClass('hidden');
             $('#contact-form-status').toggleClass('slide-from-top');
             $('#contact-form-status-black-panel').toggleClass('hidden');
+            can_send_form = true;
           }, 4800);
-        });
-    });
+      });
+    }
+  });
 
   for (var i in companies){
     let temp_category = companies[i].category;
