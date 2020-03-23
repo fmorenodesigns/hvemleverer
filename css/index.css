@@ -370,7 +370,7 @@ a {
 
 @media all and (max-width: 500px)  {
   #content {
-    padding: 30px 20px;
+    padding: 30px 20px 60px 20px;
     width: calc(100% - 20px * 2);
   }
   .category-expanded {
