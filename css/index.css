@@ -79,6 +79,7 @@ a {
   flex-direction: column;
   justify-content: center;
   margin-top: -70px;
+  width: calc(100% - 25px *2);
 }
 
 .title {
@@ -116,7 +117,6 @@ a {
   text-align: center;
   position: absolute;
   bottom: 40px;
-  width: auto;
   align-self: center;
 }
 
