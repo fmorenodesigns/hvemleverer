@@ -78,6 +78,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   margin-top: -70px;
   width: calc(100% - 25px *2);
 }
@@ -116,7 +117,7 @@ a {
   cursor: default;
   text-align: center;
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   align-self: center;
 }
 
