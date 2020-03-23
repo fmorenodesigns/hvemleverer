@@ -45,9 +45,6 @@ $(document).ready(function(){
     id++;
   }
 
-  // $('.category').toggleClass('hidden');
-  // $('.category-name').toggleClass('hidden');
-
 
   let company_id = 1;
   for (company of companies){
@@ -59,8 +56,6 @@ $(document).ready(function(){
       company_id ++;
     }
   }
-
-  //addFilters();
 });
 
 $(document).on('click', '.filter', function(){
@@ -83,4 +78,8 @@ $(document).on('click', '.category-name', function(){
   let category_id = category.attr('id').split("_")[2];
 
   $('#category_'+category_id).toggleClass('category-expanded')
+});
+
+$(document).on('click', '.continue-reading', function(){
+  document.getElementById("content").scrollIntoView({behavior: "smooth"});
 });
