@@ -29,7 +29,45 @@ function addFilters(){
   }
 }
 
+
 $(document).ready(function(){
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let form = this;
+
+      var template_params = {
+        "name": this.company_name.value,
+        "webpage": this.company_webpage.value
+      }
+      // generate the contact number value
+      this.contact_number.value = Math.random() * 100000 | 0;
+      emailjs.send('gmail', 'template_p1yp4L7J', template_params)
+      .then(function(response) {
+         if(response.status === 200) {
+           form.reset();
+           $('#contact-form-status').html('<i class="fas fa-check-circle"></i><div class="text">Ditt forslag har blitt sendt. Tusen takk!</div>');
+           $('#contact-form-status').toggleClass('hidden');
+           $('#contact-form-status').toggleClass('slide-from-top');
+           $('#contact-form-status-black-panel').toggleClass('hidden');
+           setTimeout(function(){
+             $('#contact-form-status').toggleClass('hidden');
+             $('#contact-form-status').toggleClass('slide-from-top');
+             $('#contact-form-status-black-panel').toggleClass('hidden');
+           }, 4800)
+         }
+      }, function(error) {
+          $('#contact-form-status').html('<i class="fas fa-times-circle"></i><div class="text">Det oppsto et problem. Vent litt og prøv igjen.</div>');
+          $('#contact-form-status').toggleClass('hidden');
+          $('#contact-form-status').toggleClass('slide-from-top');
+          $('#contact-form-status-black-panel').toggleClass('hidden');
+          setTimeout(function(){
+            $('#contact-form-status').toggleClass('hidden');
+            $('#contact-form-status').toggleClass('slide-from-top');
+            $('#contact-form-status-black-panel').toggleClass('hidden');
+          }, 4800);
+        });
+    });
 
   for (var i in companies){
     let temp_category = companies[i].category;
@@ -85,3 +123,13 @@ $(document).on('click', '.continue-reading', function(){
       scrollTop: $("#content").offset().top
   }, 500);
 });
+
+$(document).on('click', '.contact-button', function(){
+  $('html, body').animate({
+      scrollTop: $("#contact-us-container").offset().top
+  }, 500);
+});
+
+(function(){
+   emailjs.init('user_Dwhh6K9MG3QhBbgWIk4O5');
+})();
