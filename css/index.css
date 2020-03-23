@@ -8,6 +8,10 @@ body, html {
   background-color: #f6f8fb;
 }
 
+html {
+  background-color: #5f77c1;
+}
+
 p {
   margin: 3px 0px;
 }
@@ -28,21 +32,28 @@ a {
   text-align: center;
   padding: 30px 60px 60px 60px;
   max-width: calc(1200px - 60px * 2);
-  height: 100vh;
+  min-height: calc(100vh - 30px - 60px);
   position: relative;
 }
 
-.header {
+#header-content {
+  min-height: calc(100vh - 25px * 2);
+  height: calc(100vh - 25px * 2);
   text-align: center;
-  min-height: 100vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #5f77c1;
   color: #FFF;
   position: relative;
-  padding: 0px 25px;
+  padding: 25px;
+}
+
+.header {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
@@ -119,24 +130,26 @@ a {
 .continue-reading {
   color: #FFF;
   font-size: 1.2rem;
-  position: absolute;
+  position: sticky;
   top: 20px;
-  padding: 30px;
-  left: 50%;
+  padding: 10px 20px;
   width: 40px;
-  margin-left: calc(-20px - 30px);
   cursor: pointer;
+  border-radius: 40px;
+  background-color: #6e86d0;
+  margin: auto;
+  text-align: center;
+  z-index: 4;
+  width: 100px;
 }
 
-.continue-reading::before {
-  content: "Se selskapene";
-  position: absolute;
-  left: 50%;
-  width: 200px;
-  margin-left: -100px;
-  top: 10px;
+.continue-reading p {
   font-size: 0.8rem;
   font-weight: 600;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 8px;
 }
 
 .company-list-title {
