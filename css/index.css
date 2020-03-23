@@ -46,7 +46,7 @@ a {
 }
 
 .title {
-  margin-top: -9vh;
+  margin-top: -6%;
   color: #FFF;
 }
 
@@ -79,7 +79,7 @@ a {
   cursor: default;
   width: 100%;
   position: absolute;
-  bottom: 12vh;
+  bottom: 12%;
   text-align: center;
 }
 
