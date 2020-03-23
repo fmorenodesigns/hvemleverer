@@ -375,13 +375,23 @@ a {
 #contact-form-status .fa-check-circle {
   color: #61b967;
   font-size: 2rem;
-  padding: 0px 20px 0px 5px;
+  margin-right: 20px;
+  margin-left: 5px;
 }
 
 #contact-form-status .fa-times-circle {
   color: #ca5959;
   font-size: 2rem;
-  padding: 0px 20px 0px 5px;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+#contact-form-status .fa-spinner {
+  color: var(--spec-blue);
+  font-size: 2rem;
+  margin-right: 20px;
+  margin-left: 5px;
+  opacity: 0.7;
 }
 
 #contact-form-status .text {
@@ -405,12 +415,14 @@ a {
     opacity: 0;
     transform: translateY(-30px);
   }
-
-  10% {
+  100% {
     opacity: 1;
     transform: translateY(0px);
   }
-  95% {
+}
+
+@keyframes slide-to-top {
+  0% {
     opacity: 1;
     transform: translateY(0px);
   }
@@ -420,8 +432,27 @@ a {
   }
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 .slide-from-top {
-  animation: slide-from-top 5s linear;
+  animation: slide-from-top 0.4s linear;
+}
+
+.slide-to-top {
+  animation: slide-to-top 0.4s linear;
+}
+
+.rotate {
+  animation: rotate 1.3s linear infinite;
 }
 
 #contact-form p {

@@ -34,6 +34,10 @@ $(document).ready(function(){
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     if(can_send_form){
+      $('#contact-form-status').toggleClass('hidden');
+      $('#contact-form-status').toggleClass('slide-from-top');
+      $('#contact-form-status-black-panel').toggleClass('hidden');
+
       can_send_form = false;
 
       let form = this;
@@ -49,28 +53,35 @@ $(document).ready(function(){
          if(response.status === 200) {
            form.reset();
            $('#contact-form-status').html('<i class="fas fa-check-circle"></i><div class="text">Ditt forslag har blitt sendt. Tusen takk!</div>');
-           $('#contact-form-status').toggleClass('hidden');
-           $('#contact-form-status').toggleClass('slide-from-top');
-           $('#contact-form-status-black-panel').toggleClass('hidden');
            setTimeout(function(){
-             $('#contact-form-status').toggleClass('hidden');
-             $('#contact-form-status').toggleClass('slide-from-top');
-             $('#contact-form-status-black-panel').toggleClass('hidden');
-             can_send_form = true;
-           }, 4800)
+             $('#contact-form-status').toggleClass('slide-to-top');
+             setTimeout(function(){
+               //toggle
+               $('#contact-form-status-black-panel').toggleClass('hidden');
+               $('#contact-form-status').toggleClass('hidden');
+               //untoggle
+               $('#contact-form-status').toggleClass('slide-to-top');
+               $('#contact-form-status').toggleClass('slide-from-top');
+             }, 350);
+           }, 2000);
          }
       }, function(error) {
           $('#contact-form-status').html('<i class="fas fa-times-circle"></i><div class="text">Det oppsto et problem. Vent litt og prøv igjen.</div>');
-          $('#contact-form-status').toggleClass('hidden');
-          $('#contact-form-status').toggleClass('slide-from-top');
-          $('#contact-form-status-black-panel').toggleClass('hidden');
           setTimeout(function(){
-            $('#contact-form-status').toggleClass('hidden');
-            $('#contact-form-status').toggleClass('slide-from-top');
-            $('#contact-form-status-black-panel').toggleClass('hidden');
-            can_send_form = true;
-          }, 4800);
+            $('#contact-form-status').toggleClass('slide-to-top');
+            setTimeout(function(){
+              //toggle
+              $('#contact-form-status-black-panel').toggleClass('hidden');
+              $('#contact-form-status').toggleClass('hidden');
+              //untoggle
+              $('#contact-form-status').toggleClass('slide-to-top');
+              $('#contact-form-status').toggleClass('slide-from-top');
+            }, 350);
+          }, 2000);
       });
+
+      $('#contact-form-status').html('<i class="fa fa-spinner rotate"></i>');
+      can_send_form = true;
     }
   });
 
