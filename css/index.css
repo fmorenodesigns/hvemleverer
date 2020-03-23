@@ -37,8 +37,8 @@ a {
 }
 
 #header-content {
-  min-height: calc(100vh - 25px * 2);
   height: calc(100vh - 25px * 2);
+  min-height: 550px;
   text-align: center;
   background-color: #5f77c1;
   color: #FFF;
@@ -74,7 +74,7 @@ a {
 }
 
 .header {
-  min-height: inherit;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
