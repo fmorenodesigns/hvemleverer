@@ -79,7 +79,7 @@ a {
   cursor: default;
   text-align: center;
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
   width: auto;
   align-self: center;
 }
@@ -129,7 +129,7 @@ a {
 }
 
 .continue-reading::before {
-  content: "Se selskaperne";
+  content: "Se selskapene";
   position: absolute;
   left: 50%;
   width: 200px;
