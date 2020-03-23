@@ -81,5 +81,7 @@ $(document).on('click', '.category-name', function(){
 });
 
 $(document).on('click', '.continue-reading', function(){
-  document.getElementById("content").scrollIntoView({behavior: "smooth"});
+  $('html, body').animate({
+      scrollTop: $("#content").offset().top
+  }, 500);
 });
