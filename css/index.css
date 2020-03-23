@@ -503,4 +503,10 @@ a {
   .category-expanded {
     padding: 25px;
   }
+  .contact-button {
+    right: 15px;
+    bottom: 15px;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
 }
