@@ -371,7 +371,7 @@ a {
   width: calc(100% - 40px *2);
   max-width: calc(600px - 40px * 2);
   text-align: center;
-  padding: 80px 40px 140px 40px;
+  padding: 60px 40px 140px 40px;
   position: relative;
   color: #FFF;
 }
@@ -551,7 +551,7 @@ a {
     width: calc(100% - 25px * 2);
   }
   #contact-us{
-    padding: 60px 40px 120px 40px;
+    padding: 40px 40px 120px 40px;
   }
   .category-expanded {
     padding: 25px;
