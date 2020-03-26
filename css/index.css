@@ -8,6 +8,7 @@ body, html {
   font-family: "Roboto", sans-serif;
   color: #556186;
   background-color: #f6f8fb;
+  overflow-x: hidden;
 }
 
 p {
@@ -362,6 +363,7 @@ a {
 #contact-us-container {
   background-color: var(--main-orange);
   position: relative;
+  width: 100%;
 }
 
 #contact-us{
