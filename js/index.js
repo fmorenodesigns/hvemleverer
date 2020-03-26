@@ -45,7 +45,8 @@ $(document).ready(function(){
 
       var template_params = {
         "name": form.company_name.value,
-        "webpage": form.company_webpage.value
+        "webpage": form.company_webpage.value,
+        "area": form.delivery_area.value
       }
       // generate the contact number value
       form.contact_number.value = Math.random() * 100000 | 0;
