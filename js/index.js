@@ -136,15 +136,15 @@ $(document).on('click', '.category-name', function(){
 });
 
 $(document).on('click', '.continue-reading', function(){
-  $('html, body').animate({
-      scrollTop: $("#content").offset().scrollTop()
-  }, 500);
+  document.querySelector('#content').scrollIntoView({
+    behavior: 'smooth'
+  });
 });
 
 $(document).on('click', '.contact-button', function(){
-  $('html, body').animate({
-      scrollTop: $("#contact-us-container").offset().scrollTop()
-  }, 500);
+  document.querySelector('#contact-us-container').scrollIntoView({
+    behavior: 'smooth'
+  });
 });
 
 (function(){
