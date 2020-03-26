@@ -137,13 +137,13 @@ $(document).on('click', '.category-name', function(){
 
 $(document).on('click', '.continue-reading', function(){
   $('html, body').animate({
-      scrollTop: $("#content").offset().top
+      scrollTop: $("#content").offset().scrollTop()
   }, 500);
 });
 
 $(document).on('click', '.contact-button', function(){
   $('html, body').animate({
-      scrollTop: $("#contact-us-container").offset().top
+      scrollTop: $("#contact-us-container").offset().scrollTop()
   }, 500);
 });
 
