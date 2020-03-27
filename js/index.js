@@ -30,62 +30,21 @@ function addFilters(){
   }
 }
 
-var can_send_form = true;
-$(document).ready(function(){
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    if(can_send_form){
-      $('#contact-form-status').toggleClass('hidden');
-      $('#contact-form-status').toggleClass('slide-from-top');
-      $('#contact-form-status-black-panel').toggleClass('hidden');
-
-      can_send_form = false;
-
-      let form = this;
-
-      var template_params = {
-        "name": form.company_name.value,
-        "webpage": form.company_webpage.value,
-        "area": form.delivery_area.value
-      }
-      // generate the contact number value
-      form.contact_number.value = Math.random() * 100000 | 0;
-      emailjs.send('gmail', 'template_p1yp4L7J', template_params)
-      .then(function(response) {
-         if(response.status === 200) {
-           form.reset();
-           $('#contact-form-status').html('<i class="fas fa-check-circle"></i><div class="text">Ditt forslag har blitt sendt. Tusen takk!</div>');
-           setTimeout(function(){
-             $('#contact-form-status').toggleClass('slide-to-top');
-             setTimeout(function(){
-               //toggle
-               $('#contact-form-status-black-panel').toggleClass('hidden');
-               $('#contact-form-status').toggleClass('hidden');
-               //untoggle
-               $('#contact-form-status').toggleClass('slide-to-top');
-               $('#contact-form-status').toggleClass('slide-from-top');
-             }, 350);
-           }, 2000);
-         }
-      }, function(error) {
-          $('#contact-form-status').html('<i class="fas fa-times-circle"></i><div class="text">Det oppsto et problem. Vent litt og prøv igjen.</div>');
-          setTimeout(function(){
-            $('#contact-form-status').toggleClass('slide-to-top');
-            setTimeout(function(){
-              //toggle
-              $('#contact-form-status-black-panel').toggleClass('hidden');
-              $('#contact-form-status').toggleClass('hidden');
-              //untoggle
-              $('#contact-form-status').toggleClass('slide-to-top');
-              $('#contact-form-status').toggleClass('slide-from-top');
-            }, 350);
-          }, 2000);
-      });
-
-      $('#contact-form-status').html('<i class="fa fa-spinner rotate"></i>');
-      can_send_form = true;
+function setCurrentCity() {
+  $.ajax({
+    url: "https://geolocation-db.com/jsonp",
+    jsonpCallback: "callback",
+    dataType: "jsonp",
+    success: function(location) {
+      $('input[name=delivery_area]').val(location.city);
     }
   });
+}
+
+
+var can_send_form = true;
+$(document).ready(function(){
+  setCurrentCity();
 
   for (var i in companies){
     let temp_category = companies[i].category;
@@ -111,6 +70,62 @@ $(document).ready(function(){
       addCompany(company, category_id, company_id);
       company_id ++;
     }
+  }
+});
+
+$("#contact-form").on('submit', function(event) {
+  event.preventDefault();
+  if(can_send_form){
+    $('#contact-form-status').toggleClass('hidden');
+    $('#contact-form-status').toggleClass('slide-from-top');
+    $('#contact-form-status-black-panel').toggleClass('hidden');
+
+    can_send_form = false;
+
+    let form = this;
+
+    var template_params = {
+      "name": form.company_name.value,
+      "webpage": form.company_webpage.value,
+      "area": form.delivery_area.value
+    }
+    // generate the contact number value
+    form.contact_number.value = Math.random() * 100000 | 0;
+    emailjs.send('gmail', 'template_p1yp4L7J', template_params)
+    .then(function(response) {
+       if(response.status === 200) {
+         form.reset();
+         $('#contact-form-status').html('<i class="fas fa-check-circle"></i><div class="text">Ditt forslag har blitt sendt. Tusen takk!</div>');
+         setTimeout(function(){
+           $('#contact-form-status').toggleClass('slide-to-top');
+           setTimeout(function(){
+             //toggle
+             $('#contact-form-status-black-panel').toggleClass('hidden');
+             $('#contact-form-status').toggleClass('hidden');
+             //untoggle
+             $('#contact-form-status').toggleClass('slide-to-top');
+             $('#contact-form-status').toggleClass('slide-from-top');
+           }, 350);
+         }, 2000);
+       }
+    }, function(error) {
+        $('#contact-form-status').html('<i class="fas fa-times-circle"></i><div class="text">Det oppsto et problem. Vent litt og prøv igjen.</div>');
+        setTimeout(function(){
+          $('#contact-form-status').toggleClass('slide-to-top');
+          setTimeout(function(){
+            //toggle
+            $('#contact-form-status-black-panel').toggleClass('hidden');
+            $('#contact-form-status').toggleClass('hidden');
+            //untoggle
+            $('#contact-form-status').toggleClass('slide-to-top');
+            $('#contact-form-status').toggleClass('slide-from-top');
+          }, 350);
+        }, 2000);
+    });
+
+    $('#contact-form-status').html('<i class="fa fa-spinner rotate"></i>');
+    can_send_form = true;
+    setCurrentCity();
   }
 });
 
