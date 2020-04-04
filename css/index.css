@@ -152,7 +152,6 @@ a {
   display: inline-flex;
   flex-direction: column;
   margin: auto;
-  cursor: pointer;
 }
 
 .vipps {
