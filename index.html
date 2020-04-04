@@ -37,10 +37,11 @@
 
       <div class="help-us">
         <p>Hjelp oss med å utvikle denne</p>
-        <div class="vipps-container">
+        <div class=" vipps-container" onclick="copyToClipboard('.vipps-number')">
+          <div class="tool-tip-copied hidden">Nummeret copiert</div>
           <div class="vipps"><img src="img/vipps.png" height="18px"></img></div>
           <div class="vipps-number">
-            <p>#598917</p>
+            981 38 139
           </div>
         </div>
       </div>
@@ -49,7 +50,7 @@
   <div id="content">
     <div class="company-list-title title-h2">Selskaper</div>
     <div class="company-list">
-    <div class="cover-scroll-bar"></div>
+      <div class="cover-scroll-bar"></div>
     </div>
   </div>
   <div id="contact-us-container">
@@ -70,7 +71,8 @@
       </form>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>

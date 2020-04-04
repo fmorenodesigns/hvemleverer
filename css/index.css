@@ -123,10 +123,36 @@ a {
   color: var(--light-blue-header);
 }
 
+.tool-tip-copied {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 150px;
+  padding: 10px 0px;
+  background-color: #d24a4a;
+  text-align: center;
+  margin-left: -75px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.tool-tip-copied::after {
+  position: absolute;
+  left: calc(50% - 7px);
+  bottom: -7px;
+  content: " ";
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #d24a4a;
+}
+
 .vipps-container {
   display: inline-flex;
   flex-direction: column;
   margin: auto;
+  cursor: pointer;
 }
 
 .vipps {
@@ -140,10 +166,6 @@ a {
   padding: 10px;
   border-radius: 25px;
   width: 120px;
-  margin: auto;
-}
-
-.vipps-number p {
   color: var(--main-grey);
   font-size: 1.2rem;
   margin: 0 auto;
@@ -395,6 +417,7 @@ a {
   color: var(--main-grey);
   display: flex;
   align-items: center;
+  bottom: 130px;
 }
 
 #contact-form-status .fa-check-circle {
@@ -433,51 +456,6 @@ a {
   left: 0px;
   z-index: 3;
   background-color: #00000040;
-}
-
-@keyframes slide-from-top {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes slide-to-top {
-  0% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-.slide-from-top {
-  animation: slide-from-top 0.4s linear;
-}
-
-.slide-to-top {
-  animation: slide-to-top 0.4s linear;
-}
-
-.rotate {
-  animation: rotate 1.3s linear infinite;
 }
 
 #contact-form p {
@@ -568,4 +546,49 @@ a {
     padding: 20px;
     font-size: 1.5rem;
   }
+}
+
+@keyframes slide-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-to-top {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.slide-from-top {
+  animation: slide-from-top 0.4s linear;
+}
+
+.slide-to-top {
+  animation: slide-to-top 0.4s linear;
+}
+
+.rotate {
+  animation: rotate 1.3s linear infinite;
 }
