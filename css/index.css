@@ -168,6 +168,8 @@ a {
   color: var(--main-grey);
   font-size: 1.1rem;
   margin: 0 auto;
+  pointer-events: none;
+  cursor: default;
 }
 
 #content {
