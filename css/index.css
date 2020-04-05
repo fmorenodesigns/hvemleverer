@@ -121,11 +121,12 @@ a {
   font-size: 0.8rem;
   margin: auto;
   color: var(--light-blue-header);
+  line-height: 1.1rem;
 }
 
 .tool-tip-copied {
   position: absolute;
-  top: 20px;
+  top: 12px;
   left: 50%;
   width: 150px;
   padding: 10px 0px;
@@ -168,6 +169,7 @@ a {
   color: var(--main-grey);
   font-size: 1.1rem;
   margin: 0 auto;
+  margin-bottom: 15px;
   pointer-events: none;
   cursor: default;
 }
